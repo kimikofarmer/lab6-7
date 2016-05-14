@@ -13,10 +13,28 @@
         <header>
             <h1>Kimiko Farmer</h1>
         </header>
-        <div class="content">
-            <ul id="results">
-
-            </ul>
+        <div class="content" id="results">
+            <div class="row">
+                <div class="col-md-4" id="firstQuery">
+                    <!-- replace the content in the p block with your question -->
+                    <p>
+                        <b>Which people have favorited the song Bangerz?</b><br /><br />
+                        Query: SELECT firstname FROM person WHERE personid IN (SELECT personid FROM favorite WHERE songid=4); 
+                    </p>
+                </div>
+                <div class="col-md-4" id="secondQuery">
+                    <p>
+                        <b>How many seconds long is the longest song from a Pop album where the artist is younger than 25?</b><br /><br />
+                        Query: SELECT MAX (length) from (song NATURAL JOIN album NATURAL JOIN artist)  WHERE album.genre = 'Pop' AND artist.age < 25;
+                    </p>
+                </div>
+                <div class="col-md-4" id="thirdQuery">
+                    <p>
+                        <b>Which people whose favorite genre is Country has favorited the song Good Morning?</b><br /><br />
+                        Query: SELECT firstname FROM (person NATURAL JOIN favorite NATURAL JOIN song) WHERE person.favoritegenre = 'Country' AND song.title='Good Morning';
+                    </p>
+                </div>
+            </div>
         </div>
     </body>
 </html>
