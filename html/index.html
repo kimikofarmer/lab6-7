@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Lab 6 + 7</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="static/main.css" />
+        <link rel="stylesheet" href="../static/main.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
         <script src="static/main.js"></script>
     </head>
@@ -30,8 +30,8 @@
                 </div>
                 <div class="col-md-4" id="thirdQuery">
                     <p>
-                        <b>Which people whose favorite genre is Country has favorited the song Good Morning?</b><br /><br />
-                        Query: SELECT firstname FROM (person NATURAL JOIN favorite NATURAL JOIN song) WHERE person.favoritegenre = 'Country' AND song.title='Good Morning';
+                        <b>Which people whose favorite genre is Country has favorited the song Good Morning and where are they from?</b><br /><br />
+                        Query: SELECT firstname, city FROM (person NATURAL JOIN favorite NATURAL JOIN song) WHERE person.favoritegenre = 'Country' AND song.title='Good Morning';
                     </p>
                 </div>
             </div>
