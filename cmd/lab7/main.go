@@ -109,7 +109,7 @@ func main() {
 		var length int;
 		for rows.Next() {
 			// rows.Scan() // put columns here prefaced with &
-			table += "<tr><td>" + length + "</td></tr>" // <--- EDIT THIS LINE
+			table += "<tr><td>" + strconv.Itoa(length) + "</td></tr>" // <--- EDIT THIS LINE
 		}
 		// finally, close out the body and table
 		table += "</tbody></table>"
